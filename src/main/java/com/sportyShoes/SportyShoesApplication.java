@@ -1,7 +1,6 @@
 package com.sportyShoes;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -11,7 +10,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@EnableAutoConfiguration
 public class SportyShoesApplication {
 
 	public static void main(String[] args) {
@@ -19,20 +17,10 @@ public class SportyShoesApplication {
 	}
 
 	@Bean
-	public Docket sportyShoesApi()
-	{
-		return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.basePackage("com.sportyShoes")).build();
-		
+	public Docket sportyShoesApi() {
+		return new Docket(DocumentationType.SWAGGER_2).select()
+				.apis(RequestHandlerSelectors.basePackage("com.sportyShoes")).build();
+
 	}
-//
-//	 @Bean
-//     public DataSource dataSource(){
-//        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-//        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-//        dataSource.setUrl("jdbc:mysql://localhost:3306/vanilla");
-//        dataSource.setUsername( "root" );
-//        dataSource.setPassword( "root" );
-//        return dataSource;
-//     }
-	
+
 }
