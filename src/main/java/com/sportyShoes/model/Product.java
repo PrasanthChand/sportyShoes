@@ -1,5 +1,6 @@
 package com.sportyShoes.model;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,18 +16,14 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class User {
+public class Product {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "userId", updatable = false, nullable = true)
-	private int userId;
-	private String userName;
-	private String email;
-	private String password;
-	private long phoneNumber;
-	private String address;
-	private String userType;
-	
+	@Column(name = "productId", updatable = false, nullable = true)
+	private int productId;
+	private String productName;
+	private String productImage;
+	private String productCategory;
+	private int productPrice;
 }
- 
